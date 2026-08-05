@@ -1,0 +1,6 @@
+{
+  "name": "CogniCode",
+  "description": "CogniCode turns any uploaded codebase into a stunning GitHub README.md — complete with auto-generated Mermaid diagrams (architecture, class, sequence, data flow, ER) and a built-in AI assistant that edits the README conversationally using a user-supplied API key. Fully client-side.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

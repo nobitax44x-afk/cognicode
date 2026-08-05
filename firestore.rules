@@ -1,0 +1,18 @@
+rules_version = '2';
+// CogniCode — Firestore security rules.
+// NOTE: the current app version is fully client-side and does NOT use
+// Cloud Firestore (auth state lives in Firebase Auth, AI config in localStorage).
+// These rules are intentionally restrictive: only authenticated users may read
+// their own profile documents, and no client-side writes are allowed yet.
+// Relax the `match /users/{uid}` block when server-side profile sync ships.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{uid} {
+      allow read: if request.auth != null && request.auth.uid == uid;
+      allow write: if false;
+    }
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
